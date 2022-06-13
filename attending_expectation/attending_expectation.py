@@ -1,6 +1,12 @@
+"""
+AttendingExpectation will show to stimulate scatter diagram of
+confirmed case, stay-at-home order and safe students in a class
+"""
+
 from dataclasses import dataclass
 import random
 import matplotlib.pyplot as plt
+import time
 
 
 @dataclass
@@ -66,7 +72,7 @@ def simulation():
     #     print(i, stu[i].x, stu[i].y)
 
     sick_count = get_sick_number()
-    print("sick_count= ", sick_count)
+    # print("sick_count= ", sick_count)
 
     plot_data = [-1] * Constant.HEADCOUNT
 
@@ -91,7 +97,7 @@ def simulation():
 
     plot(plot_data)
 
-    print("attend= ", attend)
+    # print("attend= ", attend)
     return attend
 
 
@@ -109,8 +115,12 @@ def plot(plot_data):
             status_color = convert_color(val)
             plt.plot(x, y, val, color=status_color)  # 定義x,y和圖的樣式
 
-        # plt.savefig('fig1.png')
-        plt.show()
+        # time_str = time.strftime("%Y%m%d-%H%M%S")
+        # filename = time_str + '.png'
+        # print(filename)
+
+        # plt.savefig(filename)
+        # plt.show()
 
 
 def convert_color(status):
