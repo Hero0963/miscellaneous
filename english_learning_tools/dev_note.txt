@@ -1,0 +1,2 @@
+1. add git ignore
+pip install openai-whisper

@@ -1,1 +1,17 @@
-attending_expectation/
+/english_learning_tools/dev_note.txt
+
+dev_note.txt
+# Ignore IDE/project files
+.idea/
+.vscode/
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Ignore media files (e.g., audio, video, subtitles)
+*.wav
+*.vtt
+
+# Ignore miscellaneous files
+*.iml
