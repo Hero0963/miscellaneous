@@ -25,7 +25,7 @@ english_learning_tools/
 ├── transcriber/              # Speech recognition module folder
 ├── llm_processing/           # LLM data cleaning module folder
 ├── evaluation/               # Learning evaluation module folder
-├── utils/                    # Utility module folder```
+├── utils/                    # Utility module folder
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ english_learning_tools/
 
 ## Contact
 If you have any questions, feedback, or suggestions, feel free to reach out to me:
-- **Email**: your_email@example.com
+- **Email**: ated0963@gmail.com
 
 ## Notification Requirement
 You are free to use, modify, distribute, and share this project for any lawful purpose, but you are required to notify the author before doing so.

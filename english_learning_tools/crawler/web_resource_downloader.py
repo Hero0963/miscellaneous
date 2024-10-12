@@ -1,3 +1,6 @@
+# web_resource_downloader.py
+# implement yt part currently
+
 import yt_dlp
 import os
 
