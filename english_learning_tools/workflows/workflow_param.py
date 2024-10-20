@@ -15,8 +15,8 @@ from dataclasses import (
 @dataclass
 class YTFlowParams:
     yt_url: str
-    audio_path: str
+    recorded_audio_path: str
     fetch_content: list = field(default_factory=lambda: ["audio", "vtt"])
-    use_content: str = "vtt"
+    use_content: str = "audio"
     evaluation_method: str = "naive"
     output_folder: str = None
