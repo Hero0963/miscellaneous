@@ -13,7 +13,7 @@ from abc import ABC
 from .workflow_base import WorkflowBase
 from ..transcriber.local_whisper_transcriber import transcribe_audio as chosen_transcriber
 from ..elt_utils.helper import transcribe_and_save
-from ..evaluation.text_evaluation import evaluate_transcription_naive
+from ..evaluation.text_evaluation import evaluate_transcription_naive, evaluate_transcription_word_level
 
 
 class Custom01Flow(WorkflowBase, ABC):
@@ -35,7 +35,7 @@ class Custom01Flow(WorkflowBase, ABC):
 
         return self
 
-    def evaluate(self) -> 'Custom01Flow':
+    def evaluate1(self) -> 'Custom01Flow':
         logging.debug("Starting evaluation...")
 
         accuracy_rate, redundancy_rate = evaluate_transcription_naive(self.source_txt_file, self.transcription_file)
@@ -45,11 +45,18 @@ class Custom01Flow(WorkflowBase, ABC):
 
         return self
 
+    def evaluate2(self) -> 'Custom01Flow':
+        logging.debug("Starting evaluation Word-level Levenshtein")
+        distance = evaluate_transcription_word_level(self.source_txt_file, self.transcription_file)
+        logging.info(f'distance: {distance}')
+
+        return self
+
     def execute(self) -> 'Custom01Flow':
         return self
 
     def run(self) -> 'Custom01Flow':
-        return self.generate_transcription_pair().evaluate()
+        return self.generate_transcription_pair().evaluate1().evaluate2()
 
 
 def _simple_example():
