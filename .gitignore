@@ -19,3 +19,5 @@ __pycache__/
 .env
 
 **/downloads/
+
+english_learning_tools/processed_data/
